@@ -1,0 +1,27 @@
+{
+  "BEACTIVE_Metadata": {
+    "title": "BeActive - Fii activ, rămâi sănătos",
+    "description": "Alătură-te BeActive pentru a-ți urmări călătoria de fitness, a-ți stabili obiective și a te conecta cu o comunitate de entuziaști ai sănătății."
+  },
+  "Auth": {
+    "sign-in": "Conectare",
+    "sign-up": "Înregistrare"
+  },
+  "NotFound": {
+    "title": "Pagina nu a fost găsită",
+    "description": "Ne pare rău, nu am putut găsi pagina pe care o cauți. Este posibil să fi fost ștearsă, redenumită sau nu există.",
+    "home": "Acasă"
+  },
+  "ThemeToggleMode": {
+    "light": "Luminos",
+    "dark": "Întunecat"
+  },
+  "SPORTS": {
+    "football": "Fotbal",
+    "basketball": "Baschet",
+    "tennis": "Tenis",
+    "mma": "MMA",
+    "boxing": "Box",
+    "muay-thai": "Muay Thai"
+  }
+}
