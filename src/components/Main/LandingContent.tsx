@@ -1,38 +1,25 @@
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-import {useTranslations} from "next-intl";
-import {
-  CalendarCheck,
-  MapPin,
-  Trophy,
-  Users,
-  Building2,
-  TrendingUp,
-} from "lucide-react";
+import {CalendarCheck, MapPin, Trophy, Users, Building2, TrendingUp} from "lucide-react";
 import SportsList from "./SportsList";
 import {Link} from "@/i18n/navigation";
 
 export default function LandingContent() {
-  const t = useTranslations();
-
   const customerFeatures = [
     {
       icon: CalendarCheck,
       title: "Easy Booking",
-      description:
-        "Book your favorite sports fields and training sessions in just a few clicks",
+      description: "Book your favorite sports fields and training sessions in just a few clicks",
     },
     {
       icon: MapPin,
       title: "Find Nearby",
-      description:
-        "Discover sports facilities near you with our smart location finder",
+      description: "Discover sports facilities near you with our smart location finder",
     },
     {
       icon: Trophy,
       title: "Multiple Sports",
-      description:
-        "Access fields for football, basketball, tennis, MMA, boxing, and more",
+      description: "Access fields for football, basketball, tennis, MMA, boxing, and more",
     },
   ];
 
@@ -40,27 +27,24 @@ export default function LandingContent() {
     {
       icon: Building2,
       title: "List Your Facility",
-      description:
-        "Register your sports facility and reach thousands of active customers",
+      description: "Register your sports facility and reach thousands of active customers",
     },
     {
       icon: Users,
       title: "Manage Bookings",
-      description:
-        "Easily manage reservations, schedules, and customer communications",
+      description: "Easily manage reservations, schedules, and customer communications",
     },
     {
       icon: TrendingUp,
       title: "Grow Your Business",
-      description:
-        "Increase revenue by maximizing your facility's booking potential",
+      description: "Increase revenue by maximizing your facility's booking potential",
     },
   ];
 
   return (
     <div className="w-full -mt-26">
       {/* Hero Section */}
-      <section className="relative px-4 pt-36 pb-16 sm:pt-40 sm:pb-20 md:pt-44 md:pb-24 lg:pt-48 lg:pb-32 sm:px-6 md:px-10 lg:px-20 min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative px-4 pt-36 pb-16 sm:pt-40 sm:pb-20 md:pt-44 md:pb-24 lg:pt-48 lg:pb-32 sm:px-6 md:px-10 lg:px-20 min-h-125 md:min-h-150 flex items-center justify-center overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-background to-primary/10 -z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))] -z-10" />
@@ -72,8 +56,8 @@ export default function LandingContent() {
               Your Sports. Your Time. Your Field.
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground/90 mb-6 sm:mb-8 max-w-3xl mx-auto">
-              The ultimate platform connecting sports enthusiasts with premium
-              facilities. Book sessions or list your venue with ease.
+              The ultimate platform connecting sports enthusiasts with premium facilities. Book sessions or list your
+              venue with ease.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <Button
@@ -125,9 +109,7 @@ export default function LandingContent() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground/80">
-                    {feature.description}
-                  </p>
+                  <p className="text-muted-foreground/80">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -145,9 +127,7 @@ export default function LandingContent() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               For Facility Owners
             </h2>
-            <p className="text-lg text-muted-foreground/80">
-              Grow your business with our powerful booking platform
-            </p>
+            <p className="text-lg text-muted-foreground/80">Grow your business with our powerful booking platform</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {businessFeatures.map((feature) => (
@@ -161,9 +141,7 @@ export default function LandingContent() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground/80">
-                    {feature.description}
-                  </p>
+                  <p className="text-muted-foreground/80">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}

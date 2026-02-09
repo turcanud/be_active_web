@@ -7,12 +7,7 @@ import {useRouter, usePathname} from "@/i18n/navigation";
 
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
-import {
-  Command,
-  CommandGroup,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
+import {Command, CommandGroup, CommandItem, CommandList} from "@/components/ui/command";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {useState, useTransition} from "react";
 import {useParams} from "next/navigation";
@@ -53,25 +48,15 @@ export function ChooseLang({className}: {className?: string}) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={cn(
-            "w-auto xl:w-[150px] justify-between px-2 xl:px-4",
-            className
-          )}>
+          className={cn("w-auto xl:w-37.5 justify-between px-2 xl:px-4", className)}>
           <span className="flex items-center gap-2">
-            <Image
-              src={`/svgs/${locale}.svg`}
-              alt={locale}
-              width={20}
-              height={20}
-            />
-            <span className="hidden xl:inline">
-              {languages.find((language) => language.value === locale)?.label}
-            </span>
+            <Image src={`/svgs/${locale}.svg`} alt={locale} width={20} height={20} />
+            <span className="hidden xl:inline">{languages.find((language) => language.value === locale)?.label}</span>
           </span>
           <ChevronsUpDown className="opacity-50 hidden xl:block" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className={cn("w-[150px] p-0", className)}>
+      <PopoverContent className={cn("w-37.5 p-0", className)}>
         <Command>
           <CommandList>
             <CommandGroup>
@@ -88,12 +73,7 @@ export function ChooseLang({className}: {className?: string}) {
                     className="mr-2"
                   />
                   {language.label}
-                  <Check
-                    className={cn(
-                      "ml-auto",
-                      locale === language.value ? "opacity-100" : "opacity-0"
-                    )}
-                  />
+                  <Check className={cn("ml-auto", locale === language.value ? "opacity-100" : "opacity-0")} />
                 </CommandItem>
               ))}
             </CommandGroup>

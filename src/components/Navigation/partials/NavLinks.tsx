@@ -1,16 +1,7 @@
 "use client";
 
 import {useEffect, useState} from "react";
-import {
-  BuildingIcon,
-  BusIcon,
-  FileSearchCornerIcon,
-  FileStackIcon,
-  MailQuestionMarkIcon,
-  MailsIcon,
-  MessageCircleQuestionMarkIcon,
-  NotebookPenIcon,
-} from "lucide-react";
+import {BuildingIcon, MailsIcon, MessageCircleQuestionMarkIcon} from "lucide-react";
 
 import {
   NavigationMenu,
@@ -21,13 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
-} from "@/components/ui/item";
+import {Item, ItemContent, ItemMedia, ItemTitle} from "@/components/ui/item";
 import Link from "next/link";
 import {useTranslations} from "next-intl";
 
@@ -53,18 +38,14 @@ export function NavLinks() {
     <NavigationMenu viewport={false}>
       <NavigationMenuList className="flex-wrap">
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle() + " bg-transparent"}>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + " bg-transparent"}>
             <Link href="/">{t("home")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">
-            {t("business")}
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-transparent">{t("business")}</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-2 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-4">
                 <NavigationMenuLink asChild>
                   <Link
@@ -84,43 +65,31 @@ export function NavLinks() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem
-                href="/business"
-                title={t("businessItems.listServices.title")}>
+              <ListItem href="/business" title={t("businessItems.listServices.title")}>
                 {t("businessItems.listServices.description")}
               </ListItem>
-              <ListItem
-                href="/business"
-                title={t("businessItems.reachAthletes.title")}>
+              <ListItem href="/business" title={t("businessItems.reachAthletes.title")}>
                 {t("businessItems.reachAthletes.description")}
               </ListItem>
-              <ListItem
-                href="/business"
-                title={t("businessItems.seeStats.title")}>
+              <ListItem href="/business" title={t("businessItems.seeStats.title")}>
                 {t("businessItems.seeStats.description")}
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle() + " bg-transparent"}>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle() + " bg-transparent"}>
             <Link href="/blog">{t("blog")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">
-            {t("about")}
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger className="bg-transparent">{t("about")}</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-4">
+            <ul className="grid w-50 gap-4">
               <li>
                 <NavigationMenuLink asChild>
                   <Item variant="default" asChild>
-                    <Link
-                      href="/about-us"
-                      className="flex flex-row items-center gap-2">
+                    <Link href="/about-us" className="flex flex-row items-center gap-2">
                       <ItemMedia variant={"icon"}>
                         <BuildingIcon className="h-4 w-4" />
                       </ItemMedia>
@@ -132,9 +101,7 @@ export function NavLinks() {
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Item variant="default" asChild>
-                    <Link
-                      href="/faq"
-                      className="flex flex-row items-center gap-2">
+                    <Link href="/faq" className="flex flex-row items-center gap-2">
                       <ItemMedia variant={"icon"}>
                         <MessageCircleQuestionMarkIcon className="h-4 w-4" />
                       </ItemMedia>
@@ -146,9 +113,7 @@ export function NavLinks() {
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Item variant="default" asChild>
-                    <Link
-                      href="/faq"
-                      className="flex flex-row items-center gap-2">
+                    <Link href="/faq" className="flex flex-row items-center gap-2">
                       <ItemMedia variant={"icon"}>
                         <MailsIcon className="h-4 w-4" />
                       </ItemMedia>
@@ -167,20 +132,13 @@ export function NavLinks() {
   );
 }
 
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & {href: string}) {
+function ListItem({title, children, href, ...props}: React.ComponentPropsWithoutRef<"li"> & {href: string}) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href}>
           <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
         </Link>
       </NavigationMenuLink>
     </li>
