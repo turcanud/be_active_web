@@ -8,18 +8,18 @@ export default function NavProfile() {
   const t = useTranslations("Auth");
 
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex items-center gap-1 xl:gap-1.5">
       <AuthButton
         icon={LogIn}
         content={t("sign-in")}
-        href={"/sign-in"}
-        variant={"ghost"}
+        href="/sign-in"
+        variant="ghost"
       />
       <AuthButton
         icon={UserRoundPlus}
         content={t("sign-up")}
-        href={"/sign-up"}
-        variant={"outline"}
+        href="/sign-up"
+        variant="outline"
       />
       <ModeToggle />
       <ChooseLang />

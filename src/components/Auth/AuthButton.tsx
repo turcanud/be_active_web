@@ -26,9 +26,12 @@ export default function AuthButton({
 }) {
   return (
     <Link href={href}>
-      <Button className={cn(className)} variant={variant}>
-        {Icon && <Icon className="mr-2 h-4 w-4" />}
-        {content}
+      <Button
+        className={cn("px-2 xl:px-4", className)}
+        variant={variant}
+        size="default">
+        {Icon && <Icon className="h-4 w-4 xl:mr-2" />}
+        <span className="hidden xl:inline">{content}</span>
       </Button>
     </Link>
   );

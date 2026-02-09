@@ -23,5 +23,34 @@
     "mma": "MMA",
     "boxing": "Boxing",
     "muay-thai": "Muay Thai"
+  },
+  "NavLinks": {
+    "home": "Home",
+    "business": "Business",
+    "blog": "Blog",
+    "about": "About us",
+    "businessCard": {
+      "title": "Register your sport",
+      "description": "Whether you're a sports club, association or event organizer, we help you register your sport to be more accessible to athletes."
+    },
+    "businessItems": {
+      "listServices": {
+        "title": "List services and prices",
+        "description": "Athletes can easily see your services and prices."
+      },
+      "reachAthletes": {
+        "title": "Reach more athletes",
+        "description": "Increase your sports club's visibility through our platform."
+      },
+      "seeStats": {
+        "title": "See detailed statistics",
+        "description": "Monitor the performance and engagement of athletes in the club."
+      }
+    },
+    "aboutItems": {
+      "company": "Company",
+      "faq": "FAQ",
+      "contacts": "Contacts"
+    }
   }
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import {useEffect, useState} from "react";
 import {
   BuildingIcon,
   BusIcon,
@@ -28,8 +29,26 @@ import {
   ItemTitle,
 } from "@/components/ui/item";
 import Link from "next/link";
+import {useTranslations} from "next-intl";
+
+const backgroundImages = [
+  "/images/nav/basketball-nav.jfif",
+  "/images/nav/football-nav.jfif",
+  "/images/nav/tennis-nav.jfif",
+];
 
 export function NavLinks() {
+  const t = useTranslations("NavLinks");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList className="flex-wrap">
@@ -37,19 +56,12 @@ export function NavLinks() {
           <NavigationMenuLink
             asChild
             className={navigationMenuTriggerStyle() + " bg-transparent"}>
-            <Link href="/">Acasă</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle() + " bg-transparent"}>
-            <Link href="/bussiness">Bussiness</Link>
+            <Link href="/">{t("home")}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="bg-transparent">
-            Servicii
+            {t("business")}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -58,40 +70,48 @@ export function NavLinks() {
                   <Link
                     className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
                     style={{
-                      // backgroundImage: "url(/svgs/passports_ro.svg)",
+                      backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}
-                    href="/cetatenie-romana">
+                    href="/business">
                     <div className="mb-2 text-lg font-medium sm:mt-4 bg-background/90 rounded-md px-3 py-2 shadow-md">
-                      Acte românești
+                      {t("businessCard.title")}
                     </div>
                     <p className="text-muted-foreground text-sm leading-tight bg-background/90 rounded-md px-3 py-2 shadow-md">
-                      Cetățenie Română și Pașaport Românesc RAPID și LEGAL
+                      {t("businessCard.description")}
                     </p>
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/cetatenie-romana" title="Cetățenie română">
-                Obține Cetățenia Română Depune dosarul
-              </ListItem>
-              <ListItem href="/pasaport-romanesc" title="Pașaport românesc">
-                Obține pașaport românesc în doar 5 zile
-              </ListItem>
-              <ListItem href="/buletin-romanesc" title="Buletin românesc">
-                Ai nevoie de buletin românesc?
+              <ListItem
+                href="/business"
+                title={t("businessItems.listServices.title")}>
+                {t("businessItems.listServices.description")}
               </ListItem>
               <ListItem
-                href="/permis-conducere-romanesc"
-                title="Permis de conducere românesc">
-                Ai nevoie de permis de conducere românesc?
+                href="/business"
+                title={t("businessItems.reachAthletes.title")}>
+                {t("businessItems.reachAthletes.description")}
+              </ListItem>
+              <ListItem
+                href="/business"
+                title={t("businessItems.seeStats.title")}>
+                {t("businessItems.seeStats.description")}
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <NavigationMenuLink
+            asChild
+            className={navigationMenuTriggerStyle() + " bg-transparent"}>
+            <Link href="/blog">{t("blog")}</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuTrigger className="bg-transparent">
-            Compania
+            {t("about")}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
@@ -105,7 +125,7 @@ export function NavLinks() {
                         <BuildingIcon className="h-4 w-4" />
                       </ItemMedia>
                       <ItemContent>
-                        <ItemTitle>Despre noi</ItemTitle>
+                        <ItemTitle>{t("aboutItems.company")}</ItemTitle>
                       </ItemContent>
                     </Link>
                   </Item>
@@ -119,32 +139,21 @@ export function NavLinks() {
                         <MessageCircleQuestionMarkIcon className="h-4 w-4" />
                       </ItemMedia>
                       <ItemContent>
-                        <ItemTitle>FAQ</ItemTitle>
+                        <ItemTitle>{t("aboutItems.faq")}</ItemTitle>
                       </ItemContent>
                     </Link>
                   </Item>
                 </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">
-            Contacte
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-4">
-              <li>
                 <NavigationMenuLink asChild>
                   <Item variant="default" asChild>
                     <Link
-                      href="/contacte"
+                      href="/faq"
                       className="flex flex-row items-center gap-2">
                       <ItemMedia variant={"icon"}>
                         <MailsIcon className="h-4 w-4" />
                       </ItemMedia>
                       <ItemContent>
-                        <ItemTitle>Contacte</ItemTitle>
+                        <ItemTitle>{t("aboutItems.contacts")}</ItemTitle>
                       </ItemContent>
                     </Link>
                   </Item>

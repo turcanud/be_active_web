@@ -53,7 +53,10 @@ export function ChooseLang({className}: {className?: string}) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={cn("w-[150px] justify-between", className)}>
+          className={cn(
+            "w-auto xl:w-[150px] justify-between px-2 xl:px-4",
+            className
+          )}>
           <span className="flex items-center gap-2">
             <Image
               src={`/svgs/${locale}.svg`}
@@ -61,9 +64,11 @@ export function ChooseLang({className}: {className?: string}) {
               width={20}
               height={20}
             />
-            {languages.find((language) => language.value === locale)?.label}
+            <span className="hidden xl:inline">
+              {languages.find((language) => language.value === locale)?.label}
+            </span>
           </span>
-          <ChevronsUpDown className="opacity-50" />
+          <ChevronsUpDown className="opacity-50 hidden xl:block" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className={cn("w-[150px] p-0", className)}>

@@ -5,16 +5,16 @@ export default function SportsList() {
   const t = useTranslations("SPORTS");
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+    <div className="w-full max-w-7xl mx-auto">
+      <div className="text-center mb-8 sm:mb-10 md:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
           Available Sports
         </h2>
-        <p className="text-lg text-muted-foreground/80">
+        <p className="text-base sm:text-lg text-muted-foreground/80">
           Choose your sport and book your next session
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
         <SportCardLink
           link="/football"
           name={t("football")}

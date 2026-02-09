@@ -23,5 +23,34 @@
     "mma": "MMA",
     "boxing": "Box",
     "muay-thai": "Muay Thai"
+  },
+  "NavLinks": {
+    "home": "Acasă",
+    "business": "Bussiness",
+    "blog": "Blog",
+    "about": "Despre noi",
+    "businessCard": {
+      "title": "Înregistrează-ți sportul",
+      "description": "Fie că ești un club sportiv, o asociație sau un organizator de evenimente, te ajutăm să îți înregistrezi sportul pentru a fi mai accesibil pentru sportivi."
+    },
+    "businessItems": {
+      "listServices": {
+        "title": "Listeză servicii și prețuri",
+        "description": "Sportivii pot vedea serviciile și prețurile tale ușor."
+      },
+      "reachAthletes": {
+        "title": "Ajunge la mai mulți sportivi",
+        "description": "Crește vizibilitatea clubului tău sportiv prin platforma noastră."
+      },
+      "seeStats": {
+        "title": "Vezi statistici detaliate",
+        "description": "Monitorizează performanța și implicarea sportivilor în clubul tău."
+      }
+    },
+    "aboutItems": {
+      "company": "Compania",
+      "faq": "FAQ",
+      "contacts": "Contacte"
+    }
   }
 }
